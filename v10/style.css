@@ -1,0 +1,809 @@
+/* ============================================
+   Yahoo! 360° Blog Parody — style.css (v10)
+   Authentic mid-2000s Yahoo 360 aesthetic
+   ============================================ */
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, "Trebuchet MS", Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333;
+    background: #ddd8e8 url("data:image/svg+xml,%3Csvg width='4' height='4' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='4' height='4' fill='%23d5d0e2'/%3E%3Crect width='1' height='1' fill='%23cec8dc'/%3E%3C/svg%3E");
+    min-height: 100vh;
+}
+
+a {
+    color: #7B0099;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #510066;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ============================================
+   Top Navigation Bar
+   ============================================ */
+.y360-topbar {
+    background: #400090;
+    background: linear-gradient(to bottom, #7B0099 0%, #52006b 100%);
+    border-bottom: 3px solid #2e003e;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 100;
+}
+
+.y360-topbar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.y360-logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: -0.5px;
+    margin-right: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.y360-360 {
+    font-size: 14px;
+    color: #ffd700;
+    vertical-align: super;
+    margin-left: 1px;
+    font-style: italic;
+}
+
+.y360-nav {
+    display: flex;
+    gap: 2px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.y360-nav a {
+    color: #e8c6ff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 11px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.y360-nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+}
+
+.y360-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.y360-greeting {
+    color: #e0c8f5;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.y360-signout {
+    color: #ffd700;
+    font-size: 10px;
+    text-decoration: none;
+    padding: 2px 8px;
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    border-radius: 3px;
+}
+
+.y360-signout:hover {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffe766;
+}
+
+/* ============================================
+   Page Wrapper
+   ============================================ */
+.y360-page-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 8px 30px;
+}
+
+/* ============================================
+   Profile Header
+   ============================================ */
+.y360-profile-header {
+    background: #fff;
+    background: linear-gradient(to bottom, #f9f5ff 0%, #f0eaf8 100%);
+    border: 1px solid #b89fd4;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(80, 0, 120, 0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.y360-avatar-area {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.y360-avatar {
+    flex-shrink: 0;
+}
+
+.y360-avatar-placeholder {
+    width: 84px;
+    height: 84px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #a347d1 0%, #7B0099 50%, #520068 100%);
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.avatar-icon {
+    font-size: 16px;
+    opacity: 0.7;
+    line-height: 1;
+}
+
+.avatar-text {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+    font-family: Georgia, serif;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+.y360-profile-info {
+    padding-top: 2px;
+    max-width: 500px;
+}
+
+.y360-display-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #7B0099;
+    font-family: Georgia, "Times New Roman", serif;
+    margin-bottom: 3px;
+}
+
+.y360-tagline {
+    font-size: 11px;
+    color: #7a6899;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.y360-mood {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.mood-label {
+    font-weight: bold;
+    color: #7B0099;
+}
+
+.mood-emoji {
+    font-size: 14px;
+}
+
+.mood-text {
+    font-style: italic;
+    color: #9158b0;
+}
+
+.y360-online-status {
+    font-size: 10px;
+    color: #3d8b3d;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #3d8b3d;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(61, 139, 61, 0.6);
+}
+
+.y360-profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+    padding-top: 4px;
+}
+
+/* ============================================
+   Web 2.0 Glossy Buttons
+   ============================================ */
+.y360-btn {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 16px;
+    border: 1px solid;
+    white-space: nowrap;
+}
+
+.y360-btn-connect {
+    background: linear-gradient(to bottom, #a33dd4 0%, #7B0099 50%, #6a0085 100%);
+    border-color: #520068;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 2px 4px rgba(80, 0, 120, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.y360-btn-connect:hover {
+    background: linear-gradient(to bottom, #b852e2 0%, #8c10aa 50%, #7B0099 100%);
+}
+
+.y360-btn-share,
+.y360-btn-msg {
+    background: linear-gradient(to bottom, #fff 0%, #e8e2f0 100%);
+    border-color: #b89fd4;
+    color: #7B0099;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.y360-btn-share:hover,
+.y360-btn-msg:hover {
+    background: linear-gradient(to bottom, #fff 0%, #ddd4ed 100%);
+}
+
+/* ============================================
+   Content Area — Sidebar + Main Layout
+   ============================================ */
+.y360-content-area {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+/* ============================================
+   Sidebar
+   ============================================ */
+.y360-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.y360-sidebar-box {
+    background: #fff;
+    border: 1px solid #c4aedd;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(80, 0, 120, 0.08);
+}
+
+.y360-sidebar-title {
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    padding: 7px 12px;
+    background: linear-gradient(to bottom, #9433bb 0%, #7B0099 100%);
+    border-bottom: 1px solid #520068;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.3px;
+}
+
+.y360-sidebar-content {
+    padding: 10px 12px;
+    font-size: 11px;
+    color: #444;
+    line-height: 1.65;
+}
+
+.y360-sidebar-content p {
+    margin-bottom: 8px;
+}
+
+.y360-sidebar-content p:last-child {
+    margin-bottom: 0;
+}
+
+.y360-sidebar-content strong {
+    color: #7B0099;
+}
+
+/* Blast */
+.y360-blast {
+    background: #faf5ff;
+    border-left: 3px solid #c77deb;
+}
+
+.y360-blast p {
+    font-style: italic;
+    color: #6b3a8a;
+    font-size: 11px;
+}
+
+.blast-date {
+    font-size: 9px;
+    color: #aaa;
+    display: block;
+    margin-top: 6px;
+}
+
+/* Friends Grid */
+.y360-friends-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.y360-friend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+}
+
+.friend-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c77deb 0%, #7B0099 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e6d4f5;
+    box-shadow: 0 1px 4px rgba(80, 0, 120, 0.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.y360-friend span {
+    font-size: 9px;
+    color: #7B0099;
+    line-height: 1.2;
+    max-width: 88px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.y360-see-all {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    padding: 7px;
+    border-top: 1px solid #e6d4f5;
+    color: #7B0099;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.y360-see-all:hover {
+    background: #faf5ff;
+    text-decoration: underline;
+}
+
+/* Music List */
+.y360-music-list {
+    padding: 0;
+}
+
+.y360-music-list li {
+    font-size: 10px;
+    color: #555;
+    padding: 4px 0;
+    border-bottom: 1px dotted #e0d0f0;
+}
+
+.y360-music-list li:last-child {
+    border-bottom: none;
+}
+
+/* ============================================
+   Main Blog Content
+   ============================================ */
+.y360-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.y360-blog-header {
+    background: linear-gradient(to bottom, #8a14ad 0%, #7B0099 40%, #5f0077 100%);
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 6px 6px 0 0;
+    border: 1px solid #420058;
+    border-bottom: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.y360-blog-header h2 {
+    font-size: 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.blog-subtitle {
+    font-size: 10px;
+    color: #dbb8f0;
+    font-style: italic;
+}
+
+/* ============================================
+   Blog Posts
+   ============================================ */
+.y360-blog-post {
+    background: #fff;
+    border: 1px solid #c4aedd;
+    border-top: none;
+}
+
+.y360-blog-post:first-of-type {
+    border-top: 1px solid #c4aedd;
+}
+
+.post-header {
+    padding: 14px 20px 10px;
+    border-bottom: 1px dotted #ddd0ec;
+    background: linear-gradient(to bottom, #fcf9ff 0%, #fff 100%);
+}
+
+.post-title {
+    font-size: 14px;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #7B0099;
+    margin-bottom: 5px;
+    line-height: 1.35;
+}
+
+.post-meta {
+    font-size: 10px;
+    color: #888;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.post-meta a {
+    color: #9b40c0;
+    font-size: 10px;
+}
+
+.post-rating {
+    padding: 8px 20px;
+    background: #fdf8ff;
+    border-bottom: 1px dotted #ddd0ec;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stars {
+    font-size: 16px;
+    color: #d4a017;
+    letter-spacing: 1px;
+}
+
+.rating-label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #a82020;
+    font-style: italic;
+}
+
+.post-body {
+    padding: 16px 20px;
+    font-size: 12px;
+    line-height: 1.75;
+    color: #333;
+}
+
+.post-body p {
+    margin-bottom: 10px;
+}
+
+.post-body p:last-child {
+    margin-bottom: 0;
+}
+
+.post-body em {
+    color: #6b5a80;
+}
+
+.post-footer {
+    padding: 8px 20px;
+    background: linear-gradient(to bottom, #f8f4fc 0%, #f0e9f6 100%);
+    border-top: 1px solid #e4d8f0;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.post-link {
+    font-size: 10px;
+    color: #9b40c0;
+    text-decoration: none;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+    color: #7B0099;
+}
+
+/* ============================================
+   Guestbook
+   ============================================ */
+.y360-guestbook {
+    background: #fff;
+    border: 1px solid #c4aedd;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+}
+
+.y360-guestbook-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #9433bb 0%, #7B0099 100%);
+    border-bottom: 1px solid #520068;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.y360-guestbook-entry {
+    display: flex;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px dotted #ddd0ec;
+}
+
+.gb-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c77deb 0%, #7B0099 100%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid #e6d4f5;
+    box-shadow: 0 1px 3px rgba(80, 0, 120, 0.15);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.gb-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.gb-author {
+    font-size: 11px;
+    font-weight: bold;
+    color: #7B0099;
+    margin-right: 8px;
+}
+
+.gb-date {
+    font-size: 9px;
+    color: #aaa;
+}
+
+.gb-content p {
+    font-size: 11px;
+    color: #444;
+    margin-top: 4px;
+    line-height: 1.55;
+}
+
+/* Guestbook Form */
+.y360-guestbook-form {
+    padding: 16px 20px;
+    background: #faf5ff;
+    border-top: 1px solid #e4d8f0;
+}
+
+.y360-guestbook-form h4 {
+    font-size: 12px;
+    color: #7B0099;
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.gb-fake-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gb-input-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.gb-input-row label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #555;
+    width: 62px;
+    flex-shrink: 0;
+    padding-top: 4px;
+}
+
+.gb-fake-input {
+    display: block;
+    flex: 1;
+    height: 26px;
+    border: 1px solid #c4aedd;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.gb-fake-textarea {
+    display: block;
+    flex: 1;
+    height: 64px;
+    border: 1px solid #c4aedd;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.y360-guestbook-form .y360-btn {
+    align-self: flex-start;
+    margin-top: 4px;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.y360-footer {
+    margin-top: 20px;
+    background: linear-gradient(to bottom, #5f0077 0%, #420058 100%);
+    border-top: 3px solid #7B0099;
+}
+
+.y360-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.y360-footer p {
+    font-size: 10px;
+    color: #c4a8dd;
+    margin-bottom: 4px;
+}
+
+.y360-footer a {
+    color: #dbb8f0;
+    font-size: 10px;
+}
+
+.y360-footer a:hover {
+    color: #fff;
+}
+
+.footer-disclaimer {
+    color: #a888c4;
+}
+
+.footer-tiny {
+    font-size: 9px;
+    color: #8a68aa;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 760px) {
+    .y360-content-area {
+        flex-direction: column;
+    }
+
+    .y360-sidebar {
+        width: 100%;
+        order: 2;
+    }
+
+    .y360-main {
+        order: 1;
+    }
+
+    .y360-profile-header {
+        flex-direction: column;
+    }
+
+    .y360-avatar-area {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .y360-profile-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .y360-topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 8px 16px;
+    }
+
+    .y360-friends-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .post-meta {
+        flex-direction: column;
+        gap: 2px;
+    }
+}
