@@ -174,6 +174,24 @@ a.card .card-version {
   font-style: italic;
 }
 
+/* ===== Final card highlight ===== */
+
+.card--final {
+  border-color: #6b2d3e;
+  border-width: 2px;
+  background: #fdf8f6;
+}
+
+a.card--final:hover,
+a.card--final:focus {
+  border-color: #5c2434;
+  box-shadow: 0 3px 12px rgba(107, 45, 62, 0.12);
+}
+
+.card--final .card-style {
+  color: #6b2d3e;
+}
+
 /* ===== Footer ===== */
 
 footer {
