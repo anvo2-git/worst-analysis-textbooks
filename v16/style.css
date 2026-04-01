@@ -1,0 +1,562 @@
+/* ============================================
+   v16 — MathAdvisor Profile Page
+   Yahoo 360 sidebar layout + MathAdvisor review cards
+   Clean, contemporary, Goodreads/Letterboxd feel
+   ============================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #5b7a8a;
+    --accent-light: #e8eff3;
+    --accent-hover: #4a6575;
+    --bg: #f6f7f9;
+    --card-bg: #ffffff;
+    --text: #2d3436;
+    --text-muted: #6b7280;
+    --text-light: #9ca3af;
+    --border: #e5e7eb;
+    --rose: #b5626e;
+    --amber: #a1845a;
+    --teal: #5a8a7a;
+    --radius: 10px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+html {
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* --- Top Navigation --- */
+.topbar {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.topbar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.brand-icon {
+    color: var(--accent);
+    font-size: 1.3rem;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.topbar-nav {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.topbar-nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.topbar-nav a:hover {
+    background: var(--accent-light);
+    color: var(--accent);
+}
+
+.topbar-nav a.active {
+    background: var(--accent-light);
+    color: var(--accent);
+}
+
+.topbar-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* --- Page Layout --- */
+.page-layout {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    position: sticky;
+    top: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.profile-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.avatar {
+    margin: 0 auto 1rem;
+    width: 80px;
+    height: 80px;
+}
+
+.avatar-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+
+.avatar-letter {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.avatar-sub {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-top: -2px;
+}
+
+.username {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.1rem;
+}
+
+.user-handle {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-bottom: 0.9rem;
+}
+
+.user-bio {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 0.9rem;
+    text-align: left;
+}
+
+.user-location {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
+.location-icon {
+    font-size: 0.7rem;
+}
+
+.user-joined {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Sidebar Sections */
+.sidebar-section {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.sidebar-heading {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-light);
+    margin-bottom: 0.9rem;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* Shelves */
+.shelf-list {
+    list-style: none;
+}
+
+.shelf-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+}
+
+.shelf-item:last-child {
+    border-bottom: none;
+}
+
+.shelf-name {
+    color: var(--text);
+}
+
+.shelf-count {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-light);
+    background: var(--bg);
+    padding: 0.1rem 0.5rem;
+    border-radius: 10px;
+}
+
+/* Friends */
+.friends-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.friend-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: default;
+}
+
+.friends-count {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Tags */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tag {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+/* --- Main Content --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 0.5rem;
+}
+
+.content-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.sort-label {
+    color: var(--text-light);
+}
+
+.sort-option {
+    color: var(--text-muted);
+    cursor: default;
+    padding: 0.15rem 0.3rem;
+    border-radius: 4px;
+}
+
+.sort-option.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.sort-divider {
+    color: var(--text-light);
+}
+
+/* --- Review Cards --- */
+.review-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s;
+}
+
+.review-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.review-book-info {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.book-cover {
+    flex-shrink: 0;
+}
+
+.cover-placeholder {
+    width: 64px;
+    height: 88px;
+    background: var(--accent);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.85);
+    font-size: 1.8rem;
+}
+
+.cover-placeholder.accent-rose {
+    background: var(--rose);
+}
+
+.cover-placeholder.accent-amber {
+    background: var(--amber);
+}
+
+.cover-placeholder.accent-teal {
+    background: var(--teal);
+}
+
+.book-details {
+    min-width: 0;
+}
+
+.book-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+}
+
+.book-author {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
+.book-meta {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.meta-sep {
+    color: var(--border);
+}
+
+/* Rating */
+.review-rating {
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.star {
+    font-size: 1.05rem;
+    color: var(--border);
+}
+
+.star.filled {
+    color: #e2a832;
+}
+
+.rating-text {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-left: 0.5rem;
+    font-weight: 500;
+}
+
+/* Review Body */
+.review-body p {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+.review-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Review Footer */
+.review-footer {
+    margin-top: 1.15rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+}
+
+.review-date {
+    color: var(--text-light);
+}
+
+.review-shelf {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.review-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-btn {
+    color: var(--text-muted);
+    cursor: default;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: color 0.15s;
+}
+
+/* --- Footer --- */
+.site-footer {
+    max-width: 1180px;
+    margin: 2rem auto 0;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+}
+
+/* --- Responsive --- */
+@media (max-width: 820px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .topbar-nav {
+        display: none;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

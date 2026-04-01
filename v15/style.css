@@ -1,0 +1,213 @@
+/* v15 — Dark Luxury Editorial Blog */
+
+:root {
+  --black: #0a0a0a;
+  --gold: #c9a84c;
+  --cream: #f0e6d0;
+  --text: #c8c0b0;
+  --muted: #777666;
+  --dark-surface: #111110;
+  --border-subtle: #2a2720;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--text);
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+/* ── Hero ────────────────────────────────────── */
+
+.hero {
+  width: 100%;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--gold);
+  background: linear-gradient(180deg, #0f0e0b 0%, var(--black) 100%);
+}
+
+.hero-overline {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.65rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: Georgia, "Palatino Linotype", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  max-width: 700px;
+  margin: 0 auto 1.2rem;
+}
+
+.hero-subtitle {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Blog Layout ─────────────────────────────── */
+
+.blog {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* ── Section Divider ─────────────────────────── */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.35;
+}
+
+.divider-diamond {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ── Post / Entry ────────────────────────────── */
+
+.post {
+  margin-bottom: 1rem;
+}
+
+.post-meta {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.post-meta .date {
+  color: var(--gold);
+}
+
+.post-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.post-author {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+.post-rating {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.6rem;
+}
+
+.post p {
+  margin-bottom: 1.25rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.post p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Pull Quote ──────────────────────────────── */
+
+.pull-quote {
+  border-left: 2px solid var(--gold);
+  margin: 2rem 0 2rem 0;
+  padding: 1rem 1.5rem;
+  font-style: italic;
+  color: var(--cream);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  background: rgba(201, 168, 76, 0.03);
+}
+
+/* ── Byline / Signature ──────────────────────── */
+
+.byline {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 1.2rem;
+  text-align: right;
+}
+
+/* ── Footer ──────────────────────────────────── */
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .blog {
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  .pull-quote {
+    padding: 0.8rem 1rem;
+  }
+}

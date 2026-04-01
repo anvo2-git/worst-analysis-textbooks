@@ -1,0 +1,168 @@
+/* v17 — Minimal Modern */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #faf8f5;
+    color: #2a2a2a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+
+.site-header,
+.cards,
+.site-footer {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Header */
+
+.site-header {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.site-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.site-subtitle {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #888;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    gap: 1px;
+    padding-bottom: 4rem;
+}
+
+.card {
+    padding: 2.5rem 0;
+    border-top: 1px solid #e8e4de;
+}
+
+.card:last-child {
+    border-bottom: 1px solid #e8e4de;
+}
+
+.card-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #1a1a1a;
+    transition: color 0.2s ease;
+}
+
+.card:hover .card-title {
+    color: #b8963e;
+}
+
+.card-author {
+    margin-top: 0.35rem;
+    font-size: 0.875rem;
+    color: #777;
+}
+
+/* Rating dots */
+
+.card-rating {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 0.9rem;
+    align-items: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ddd;
+    display: inline-block;
+    position: relative;
+}
+
+.dot.filled {
+    background: #b8963e;
+}
+
+.dot.half {
+    background: linear-gradient(90deg, #b8963e 50%, #ddd 50%);
+}
+
+/* Review text */
+
+.card-review {
+    margin-top: 1rem;
+    font-size: 0.935rem;
+    line-height: 1.75;
+    color: #444;
+}
+
+/* Hover */
+
+.card {
+    transition: padding-left 0.25s ease;
+}
+
+.card:hover {
+    padding-left: 0.75rem;
+}
+
+/* Footer */
+
+.site-footer {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #aaa;
+    letter-spacing: 0.01em;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+    .site-header {
+        padding-top: 3rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .site-title {
+        font-size: 1.75rem;
+    }
+
+    .card {
+        padding: 1.75rem 0;
+    }
+
+    .card:hover {
+        padding-left: 0;
+    }
+}
