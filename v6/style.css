@@ -1,0 +1,375 @@
+/* ===================================================
+   The Worst Analysis Textbooks — v6 — Dark Luxury
+   =================================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0a0a0a;
+    --near-black: #111111;
+    --dark: #1a1a1a;
+    --dark-mid: #222222;
+    --gold: #c9a84c;
+    --gold-light: #e0c872;
+    --gold-dim: #8a6f2f;
+    --cream: #f0e6d0;
+    --cream-soft: #d4c5a9;
+    --muted: #777666;
+    --text: #c8c0b0;
+    --text-light: #e0d8c8;
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--text);
+    font-family: "Georgia", "Times New Roman", "Palatino Linotype", serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Hero --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        var(--black) 0%,
+        #0d0b07 40%,
+        #141008 70%,
+        var(--black) 100%
+    );
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+}
+
+.hero-overline {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 2.5rem;
+}
+
+.hero-title {
+    font-family: "Georgia", "Palatino Linotype", serif;
+    font-size: 3.8rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--cream);
+    letter-spacing: 0.02em;
+    margin-bottom: 2rem;
+}
+
+.hero-rule {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 2rem;
+}
+
+.hero-subtitle {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--cream-soft);
+    line-height: 1.8;
+    max-width: 540px;
+    margin: 0 auto 1.5rem;
+}
+
+.hero-edition {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+}
+
+/* --- Intro --- */
+.intro {
+    padding: 6rem 2rem;
+    text-align: center;
+    background-color: var(--near-black);
+    border-top: 1px solid rgba(201, 168, 76, 0.12);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.section-heading {
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.intro-text {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 2;
+}
+
+/* --- Collection --- */
+.collection {
+    padding: 5rem 0;
+    background-color: var(--black);
+}
+
+.book-card {
+    display: flex;
+    gap: 2.5rem;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.book-card:first-child {
+    padding-top: 0;
+}
+
+.book-card:last-child {
+    border-bottom: none;
+}
+
+.book-number {
+    flex-shrink: 0;
+    font-family: "Georgia", serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    color: rgba(201, 168, 76, 0.2);
+    width: 60px;
+    text-align: center;
+    padding-top: 0.2rem;
+    line-height: 1;
+}
+
+.book-content {
+    flex: 1;
+}
+
+.book-title {
+    font-family: "Georgia", "Palatino Linotype", serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.45;
+    margin-bottom: 0.6rem;
+}
+
+.book-author {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.book-author strong {
+    color: var(--cream-soft);
+    font-weight: 400;
+}
+
+/* --- Stars --- */
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.star {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: relative;
+}
+
+.star::before {
+    content: "\2605";
+    font-size: 1rem;
+    color: #333;
+}
+
+.star.full::before {
+    color: var(--gold);
+}
+
+.star.half {
+    overflow: hidden;
+}
+
+.star.half::before {
+    color: #333;
+}
+
+.star.half::after {
+    content: "\2605";
+    font-size: 1rem;
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+.star.empty::before {
+    color: #2a2520;
+}
+
+.rating-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-dim);
+    margin-left: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid rgba(201, 168, 76, 0.2);
+}
+
+blockquote p {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 0.8rem;
+}
+
+blockquote cite {
+    font-size: 0.72rem;
+    font-style: normal;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+}
+
+/* --- Coda --- */
+.coda {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--near-black);
+    border-top: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.coda-rule {
+    width: 40px;
+    height: 1px;
+    background: var(--gold-dim);
+    margin: 0 auto 2.5rem;
+}
+
+.coda-text {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--cream-soft);
+    line-height: 2;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.coda-mark {
+    color: var(--gold-dim);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(201, 168, 76, 0.08);
+    background-color: var(--black);
+}
+
+footer p {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .book-card {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .book-number {
+        width: auto;
+        text-align: left;
+        font-size: 1.8rem;
+    }
+
+    .intro {
+        padding: 4rem 1.5rem;
+    }
+
+    .collection {
+        padding: 3rem 0;
+    }
+
+    .book-card {
+        padding: 2.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    blockquote {
+        padding-left: 1rem;
+    }
+}
