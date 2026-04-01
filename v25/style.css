@@ -1,0 +1,499 @@
+/* ============================================
+   The Epsilon Errata — v25 (Definitive Edition)
+   ============================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+::selection {
+  background: #5c2434;
+  color: #f7f4ef;
+}
+
+::-moz-selection {
+  background: #5c2434;
+  color: #f7f4ef;
+}
+
+/* --- Body & Paper Texture --- */
+body {
+  font-family: Georgia, 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.75;
+  color: #2c2420;
+  background-color: #f7f4ef;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(139, 119, 101, 0.018) 50px,
+      rgba(139, 119, 101, 0.018) 51px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(139, 119, 101, 0.012) 50px,
+      rgba(139, 119, 101, 0.012) 51px
+    ),
+    radial-gradient(ellipse at 20% 50%, rgba(139, 119, 101, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 20%, rgba(92, 36, 52, 0.02) 0%, transparent 60%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Focus Styles (Accessibility) --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #5c2434;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- Layout --- */
+.wrapper {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* --- Header --- */
+.site-header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(92, 36, 52, 0.15);
+}
+
+.site-title {
+  font-size: clamp(2rem, 1.6rem + 2vw, 3rem);
+  font-weight: normal;
+  color: #5c2434;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  font-style: italic;
+}
+
+.site-tagline {
+  font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1.05rem);
+  color: #7a6b63;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+.site-about {
+  font-size: 0.875rem;
+  color: #6b5e56;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* --- Post --- */
+.post {
+  margin-bottom: 3.5rem;
+  padding: 2rem 0;
+  border-left: 3px solid transparent;
+  padding-left: 0;
+  transition: border-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.post:hover {
+  border-left-color: rgba(92, 36, 52, 0.2);
+  padding-left: 1.25rem;
+}
+
+.post-number {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #5c2434;
+  opacity: 0.65;
+  margin-bottom: 0.5rem;
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+}
+
+.post-title {
+  font-size: clamp(1.35rem, 1.2rem + 0.75vw, 1.75rem);
+  font-weight: normal;
+  color: #2c2420;
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+  font-style: italic;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: #8a7b72;
+  margin-bottom: 0.15rem;
+  line-height: 1.6;
+}
+
+.post-meta .author {
+  font-style: italic;
+}
+
+.post-meta .publisher {
+  color: #9a8b82;
+}
+
+/* --- Star Ratings --- */
+.rating {
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+}
+
+.star-filled {
+  color: #5c2434;
+}
+
+.star-half {
+  color: #5c2434;
+  position: relative;
+}
+
+.star-empty {
+  color: #d4ccc3;
+}
+
+.rating-text {
+  font-size: 0.75rem;
+  color: #8a7b72;
+  margin-left: 0.5rem;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+
+/* --- Post Body --- */
+.post-body p {
+  margin-bottom: 1.1rem;
+}
+
+.post-body p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.8;
+  padding-right: 0.08em;
+  padding-top: 0.07em;
+  color: #5c2434;
+  font-family: Georgia, 'Palatino Linotype', Palatino, serif;
+  font-weight: normal;
+}
+
+.post-body p:first-of-type {
+  overflow: hidden;
+}
+
+.post-body .week-entry {
+  margin-bottom: 0.9rem;
+}
+
+/* --- Pull Quote --- */
+.pull-quote {
+  border-left: 3px solid #5c2434;
+  margin: 1.75rem 0 1.75rem 0;
+  padding: 0.9rem 1.25rem;
+  font-style: italic;
+  color: #5c2434;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+  line-height: 1.65;
+  background: rgba(92, 36, 52, 0.025);
+}
+
+/* --- Tags --- */
+.post-tags {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid rgba(92, 36, 52, 0.2);
+  color: #5c2434;
+  border-radius: 2px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  text-decoration: none;
+  cursor: default;
+}
+
+.tag:hover {
+  background-color: #5c2434;
+  color: #f7f4ef;
+}
+
+/* --- Post Divider --- */
+.post-divider {
+  text-align: center;
+  margin: 0 0 3.5rem;
+  border: none;
+  color: #c4b8ae;
+  font-size: 1.1rem;
+  letter-spacing: 0.5em;
+  line-height: 1;
+  overflow: visible;
+  height: auto;
+  position: relative;
+}
+
+.post-divider::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: rgba(92, 36, 52, 0.15);
+  margin: 0 auto 0.6rem;
+}
+
+.post-divider::after {
+  content: '\2234';
+  color: rgba(92, 36, 52, 0.3);
+  font-size: 1rem;
+}
+
+/* --- Subscribe Box --- */
+.subscribe-box {
+  margin-top: 3.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(92, 36, 52, 0.15);
+  background: rgba(92, 36, 52, 0.02);
+  text-align: center;
+}
+
+.subscribe-box h3 {
+  font-size: 1.05rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #5c2434;
+  margin-bottom: 0.5rem;
+}
+
+.subscribe-box p {
+  font-size: 0.85rem;
+  color: #7a6b63;
+  margin-bottom: 1.25rem;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(92, 36, 52, 0.2);
+  background: #f7f4ef;
+  font-family: Georgia, Palatino, serif;
+  font-size: 0.85rem;
+  color: #2c2420;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.subscribe-form input[type="email"]:focus {
+  border-color: #5c2434;
+}
+
+.subscribe-form input[type="email"]::placeholder {
+  color: #b0a69d;
+  font-style: italic;
+}
+
+.subscribe-form button {
+  padding: 0.55rem 1.25rem;
+  background: #5c2434;
+  color: #f7f4ef;
+  border: 1px solid #5c2434;
+  font-family: Georgia, Palatino, serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.subscribe-form button:hover {
+  background: #6b2d3e;
+}
+
+.subscribe-form button:active {
+  transform: scale(0.97);
+}
+
+/* --- Footer --- */
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(92, 36, 52, 0.12);
+  text-align: center;
+}
+
+.footer-archive {
+  font-size: 0.75rem;
+  color: #9a8b82;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.footer-archive-years {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-archive-years span {
+  transition: color 0.2s ease;
+  cursor: default;
+}
+
+.footer-archive-years span:hover {
+  color: #5c2434;
+}
+
+.footer-note {
+  font-size: 0.75rem;
+  color: #b0a69d;
+  font-style: italic;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* --- Links --- */
+a {
+  color: #5c2434;
+  text-decoration: underline;
+  text-decoration-color: rgba(92, 36, 52, 0.3);
+  text-underline-offset: 0.15em;
+  transition: text-decoration-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  text-decoration-color: #5c2434;
+  color: #6b2d3e;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 2rem 1.15rem 3rem;
+  }
+
+  .post:hover {
+    padding-left: 0.75rem;
+  }
+
+  .site-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .post {
+    margin-bottom: 2.5rem;
+  }
+
+  .pull-quote {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0.75rem 1rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .subscribe-form input[type="email"],
+  .subscribe-form button {
+    width: 100%;
+  }
+
+  .post-body p:first-of-type::first-letter {
+    font-size: 2.8em;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-title {
+    font-size: 1.75rem;
+  }
+
+  .post-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Print Styles --- */
+@media print {
+  body {
+    background: white;
+    color: black;
+    font-size: 11pt;
+    background-image: none;
+  }
+
+  .wrapper {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .post:hover {
+    border-left-color: transparent;
+    padding-left: 0;
+  }
+
+  .subscribe-box {
+    display: none;
+  }
+
+  .tag {
+    border-color: #999;
+    color: #333;
+  }
+
+  .tag:hover {
+    background: transparent;
+    color: #333;
+  }
+
+  .pull-quote {
+    border-left-color: #333;
+    color: #333;
+    background: transparent;
+  }
+
+  .site-title,
+  .post-number,
+  .star-filled,
+  .star-half {
+    color: #333;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .post {
+    page-break-inside: avoid;
+  }
+}

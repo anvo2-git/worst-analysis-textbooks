@@ -1,0 +1,335 @@
+/* v22 — Polished Academic Blog (refined from v19) */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- Body & Background Texture ---- */
+
+body {
+  background-color: #f7f4ef;
+  color: #33302b;
+  font-family: Georgia, "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  font-size: 18px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 119, 101, 0.018) 2px,
+      rgba(139, 119, 101, 0.018) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(139, 119, 101, 0.015) 3px,
+      rgba(139, 119, 101, 0.015) 4px
+    ),
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(180, 155, 130, 0.06) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(160, 140, 120, 0.04) 0%,
+      transparent 60%
+    );
+}
+
+a {
+  color: #5c2434;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: #5c2434;
+}
+
+/* ---- Layout ---- */
+
+.site-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 4rem;
+  background-color: rgba(255, 253, 250, 0.65);
+  box-shadow:
+    0 1px 3px rgba(92, 36, 52, 0.04),
+    0 8px 40px rgba(92, 36, 52, 0.06);
+  min-height: 100vh;
+}
+
+/* ---- Header ---- */
+
+.site-header {
+  text-align: center;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.site-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5c2434;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+/* Header ornament — centered diamond pattern */
+.header-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.header-ornament span {
+  display: block;
+  background-color: #c9a9a0;
+}
+
+.header-ornament span:nth-child(1),
+.header-ornament span:nth-child(3) {
+  width: 28px;
+  height: 1px;
+}
+
+.header-ornament span:nth-child(2) {
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+}
+
+.site-tagline {
+  font-size: 1.05rem;
+  color: #7a6e64;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.site-about {
+  font-size: 0.92rem;
+  color: #5e574f;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ---- Blog Posts ---- */
+
+.post {
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.8rem;
+  position: relative;
+}
+
+/* Post divider — centered short rule with gradient fade */
+.post::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #c9a9a0 30%,
+    #c9a9a0 70%,
+    transparent 100%
+  );
+}
+
+.post:last-of-type {
+  margin-bottom: 2rem;
+  padding-bottom: 0;
+}
+
+.post:last-of-type::after {
+  display: none;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #9a9089;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.35rem;
+}
+
+.post-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #2c2926;
+  line-height: 1.3;
+  margin-bottom: 0.15rem;
+}
+
+.post-meta {
+  font-size: 0.92rem;
+  color: #7a6e64;
+  margin-bottom: 0.25rem;
+}
+
+.post-meta .author {
+  font-style: italic;
+}
+
+/* ---- Star Ratings ---- */
+
+.post-rating {
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.star {
+  font-size: 1rem;
+  color: #d8cdc6;
+  line-height: 1;
+}
+
+.star.filled {
+  color: #5c2434;
+}
+
+.star.half {
+  background: linear-gradient(90deg, #5c2434 50%, #d8cdc6 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rating-text {
+  font-size: 0.82rem;
+  color: #5c2434;
+  font-weight: 600;
+  margin-left: 0.45rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Post Body ---- */
+
+.post-body p {
+  margin-bottom: 1rem;
+}
+
+.post-body p:last-child {
+  margin-bottom: 0.8rem;
+}
+
+/* ---- Pullquote / Blockquote ---- */
+
+.pullquote {
+  border-left: 3px solid #5c2434;
+  margin: 1.4rem 0;
+  padding: 0.6rem 0 0.6rem 1.3rem;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #5c2434;
+  line-height: 1.6;
+}
+
+/* ---- Tags ---- */
+
+.post-tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.76rem;
+  color: #5c2434;
+  background-color: rgba(92, 36, 52, 0.06);
+  padding: 0.22rem 0.7rem;
+  border-radius: 3px;
+  border: 1px solid rgba(92, 36, 52, 0.12);
+  border-left: 3px solid rgba(92, 36, 52, 0.25);
+  letter-spacing: 0.03em;
+}
+
+/* ---- Footer ---- */
+
+.site-footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-ornament {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #c9a9a0 50%,
+    transparent 100%
+  );
+  margin: 0 auto 1.5rem;
+}
+
+.footer-heading {
+  font-size: 0.82rem;
+  color: #9a9089;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-note {
+  font-size: 0.78rem;
+  color: #b5ada4;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-wrapper {
+    padding: 2rem 1.2rem 3rem;
+    box-shadow: none;
+  }
+
+  .site-title {
+    font-size: 1.8rem;
+  }
+
+  .post-title {
+    font-size: 1.35rem;
+  }
+
+  .pullquote {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+}
